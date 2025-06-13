@@ -25,6 +25,7 @@ export interface PackageInfo {
   description: string;
   color: string;
   icon: string;
+  logo: string;
   url: string;
 }
 
@@ -34,6 +35,7 @@ export const reaPackages: PackageInfo[] = [
     description: 'Beautiful network graphs and visualizations',
     color: 'from-blue-500 to-cyan-500',
     icon: '🕸️',
+    logo: '/reagraph.png',
     url: 'https://reagraph.dev/?path=/docs/docs-intro--docs'
   },
   {
@@ -41,6 +43,7 @@ export const reaPackages: PackageInfo[] = [
     description: 'Modern UI component library',
     color: 'from-purple-500 to-pink-500', 
     icon: '🧱',
+    logo: '/reablocks.png',
     url: 'https://storybook.reablocks.dev/'
   },
   {
@@ -48,6 +51,7 @@ export const reaPackages: PackageInfo[] = [
     description: 'Data visualization and charting library',
     color: 'from-green-500 to-emerald-500',
     icon: '📊',
+    logo: '/reaviz.png',
     url: 'https://storybook.reaviz.dev/?path=/docs/docs-intro--docs'
   },
   {
@@ -55,6 +59,7 @@ export const reaPackages: PackageInfo[] = [
     description: 'Chat components and messaging UI',
     color: 'from-orange-500 to-red-500',
     icon: '💬',
+    logo: '/reachat.svg',
     url: 'https://storybook.reachat.dev/?path=/docs/docs-intro--docs'
   }
 ];

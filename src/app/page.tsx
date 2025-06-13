@@ -6,7 +6,7 @@ import { PackageGrid } from '../components/demo/PackageGrid';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden" style={{backgroundColor: '#11111F'}}>
       <BackgroundChart />
       
       <div className="container mx-auto px-4 py-16">

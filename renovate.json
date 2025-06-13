@@ -1,0 +1,68 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "schedule": ["before 6am on monday"],
+  "timezone": "America/New_York",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "groupName": "reaviz ecosystem",
+      "matchPackageNames": [
+        "reaviz",
+        "reablocks", 
+        "reagraph",
+        "reachat"
+      ],
+      "schedule": ["before 6am on monday"],
+      "automerge": false,
+      "labels": ["reaviz-update"]
+    },
+    {
+      "groupName": "React ecosystem",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "schedule": ["before 6am on monday"],
+      "automerge": false
+    },
+    {
+      "groupName": "Next.js ecosystem", 
+      "matchPackageNames": [
+        "next",
+        "eslint-config-next"
+      ],
+      "schedule": ["before 6am on monday"],
+      "automerge": false
+    },
+    {
+      "groupName": "Development tools",
+      "matchDepTypes": ["devDependencies"],
+      "excludePackageNames": [
+        "react",
+        "react-dom", 
+        "@types/react",
+        "@types/react-dom",
+        "next",
+        "eslint-config-next"
+      ],
+      "schedule": ["before 6am on monday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": ["patch", "minor"]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["at any time"]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  }
+}

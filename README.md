@@ -50,10 +50,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ## 📜 Available Scripts
 
+### Development
 - `pnpm dev` - Start the development server
 - `pnpm build` - Build the application for production
 - `pnpm start` - Start the production server
 - `pnpm lint` - Run ESLint to check code quality
+
+### Release Management
+- `pnpm changeset` - Create a new changeset (for version bumps)
+- `pnpm changeset:version` - Apply changesets and update versions
+- `pnpm changeset:publish` - Publish packages to npm
+- `pnpm release` - Build and publish (used in CI)
 
 ## 📁 Project Structure
 
@@ -73,6 +80,36 @@ src/
 ```
 
 **Note:** The components in `src/components/demo/` are demonstration examples that you can safely delete when building your own application.
+
+## 🔄 Automatic Versioning & Dependency Management
+
+This starter app includes automated tools to manage versions and keep dependencies up to date:
+
+### Semantic Versioning with Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) for semantic versioning:
+
+1. **Create a changeset** when making changes:
+   ```bash
+   pnpm changeset
+   ```
+   This will prompt you to describe your changes and select the appropriate version bump (major, minor, patch).
+
+2. **Version and publish** (automated via GitHub Actions):
+   - When changesets are merged to `main`, GitHub Actions automatically creates a PR with version bumps
+   - Merging that PR triggers an automated release
+
+### Automated Dependency Updates with Renovate
+
+[Renovate](https://renovatebot.com/) automatically creates PRs to update dependencies:
+
+- **Reaviz ecosystem updates** (reaviz, reablocks, reagraph, reachat) - Grouped weekly on Mondays
+- **React ecosystem updates** - Grouped weekly
+- **Next.js updates** - Grouped weekly  
+- **Development tools** - Auto-merged for patch/minor updates
+- **Security updates** - Immediately auto-merged
+
+Configuration is in `renovate.json` and can be customized as needed.
 
 ## 🎨 Featured Components
 
